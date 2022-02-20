@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Card, CardGroup, Col, Form, Row} from "react-bootstrap";
 import CardHeader from "react-bootstrap/CardHeader";
+import PropTypes from "prop-types";
 
-const PizzaCalculatorCard = () => {
+const PizzaCalculatorCard = (props) => {
     const [diagonalValue, setDiagonalValue] = useState();
     const [amountValue, setAmountValue] = useState();
     const [priceValue, setPriceValue] = useState();
@@ -22,13 +23,12 @@ const PizzaCalculatorCard = () => {
     const area = partialArea * amountValue;
     const pricePerCm = priceValue / partialArea * 100;
 
+    useEffect(() => {
+        props.setResult(pricePerCm);
+    }, [pricePerCm]);
+
     return (
-        <div>
-
-            <CardGroup>
-
-
-                <Card className="text-center">
+        <Card className="text-center" bg={props.isBest ? "success" : ""}>
                     <CardHeader>Kalkulator pizzy</CardHeader>
                     <Card.Body>
                         <Form>
@@ -66,10 +66,14 @@ const PizzaCalculatorCard = () => {
                     </Card.Body>
                 </Card>
 
-            </CardGroup>
 
-        </div>
+
     );
 };
+
+PizzaCalculatorCard.propTypes = {
+    setResult: PropTypes.func,
+    isBest: PropTypes.bool
+}
 
 export default PizzaCalculatorCard;
