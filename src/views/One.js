@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Col, Form, Row} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 import PizzaCalculatorCard from "../components/PizzaCalculatorCard";
 
 
 
-const One = (props) => {
+const One = () => {
 
     const [result1, setResult1] = useState();
     const [result2, setResult2] = useState();

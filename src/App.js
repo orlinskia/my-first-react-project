@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import {Button, Container, Image, Nav, Navbar} from "react-bootstrap";
+import { Container, Image, Nav, Navbar} from "react-bootstrap";
 import {LinkContainer} from "react-router-bootstrap";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import One from "./views/One";
 import Two from "./views/Two";
 

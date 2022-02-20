@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Card, CardGroup, Col, Form, Row} from "react-bootstrap";
+import {Card, Form} from "react-bootstrap";
 import CardHeader from "react-bootstrap/CardHeader";
 import PropTypes from "prop-types";
 
 const PizzaCalculatorCard = (props) => {
-    const [diagonalValue, setDiagonalValue] = useState();
-    const [amountValue, setAmountValue] = useState();
-    const [priceValue, setPriceValue] = useState();
+    const [diagonalValue, setDiagonalValue] = useState('');
+    const [amountValue, setAmountValue] = useState('');
+    const [priceValue, setPriceValue] = useState('');
     const handleSrednicaChange = (e) => {
         setDiagonalValue(e.target.value);
     }
@@ -25,7 +25,8 @@ const PizzaCalculatorCard = (props) => {
 
     useEffect(() => {
         props.setResult(pricePerCm);
-    }, [pricePerCm]);
+        console.log(pricePerCm);
+    }, [pricePerCm, props]);
 
     return (
         <Card className="text-center" bg={props.isBest ? "success" : ""}>
