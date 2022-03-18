@@ -1,9 +1,10 @@
 import React from 'react';
+import CalculatorCard from "../components/CalculatorCard"
 
 const Two = () => {
     return (
         <div>
-            111
+            <CalculatorCard />
         </div>
     );
 };

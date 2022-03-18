@@ -7,15 +7,15 @@ const PizzaCalculatorCard = (props) => {
     const [diagonalValue, setDiagonalValue] = useState('');
     const [amountValue, setAmountValue] = useState('');
     const [priceValue, setPriceValue] = useState('');
-    const handleSrednicaChange = (e) => {
+    const handleDiagonalChange = (e) => {
         setDiagonalValue(e.target.value);
     }
 
-    const handleIleChange = (e) => {
+    const handleAmountChange = (e) => {
         setAmountValue(e.target.value);
     }
 
-    const handleCenaChange = (e) => {
+    const handleValueChange = (e) => {
         setPriceValue(e.target.value);
     }
 
@@ -38,7 +38,7 @@ const PizzaCalculatorCard = (props) => {
                                 <Form.Control
                                     value={diagonalValue}
                                     type="number"
-                                    onChange={handleSrednicaChange}
+                                    onChange={handleDiagonalChange}
                                     placeholder="Średnica [cm]"
                                     className="mb-3 text-center"
                                 />
@@ -46,7 +46,7 @@ const PizzaCalculatorCard = (props) => {
                                 <Form.Control
                                     value={amountValue}
                                     type="number"
-                                    onChange={handleIleChange}
+                                    onChange={handleAmountChange}
                                     placeholder="Ilość"
                                     className="mb-3 text-center"
                                 />
@@ -54,7 +54,7 @@ const PizzaCalculatorCard = (props) => {
                                 <Form.Control
                                     value={priceValue}
                                     type="number"
-                                    onChange={handleCenaChange}
+                                    onChange={handleValueChange}
                                     placeholder="Cena za szt. [zł]"
                                     className="mb-3 text-center"
                                 />
